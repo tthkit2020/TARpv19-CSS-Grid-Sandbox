@@ -1,0 +1,86 @@
+:root {
+    --main-padding: 5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.5fr 3fr 2fr 0.8fr;
+    grid-template-areas: 
+    "nav nav nav nav"
+    "sidebar main main main"
+    "sidebar content1 content2 content3"
+    "sidebar footer footer footer"
+    ;
+    gap: 10px;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+nav {
+    background: darkolivegreen;
+    grid-area: nav;
+    padding: var(--main-padding);
+}
+
+main {
+    background: darkslategray;
+    grid-area: main;
+    padding: var(--main-padding);
+}
+
+#sidebar {
+    background: rgb(30, 109, 109);
+    grid-area: sidebar;
+    padding: var(--main-padding);
+}
+
+#content1 {
+    background: chocolate;
+    grid-area: content1;
+    padding: var(--main-padding);
+}
+
+#content2 {
+    background: cadetblue;
+    grid-area: content2;
+    padding: var(--main-padding);
+}
+
+#content3 {
+    background: crimson;
+    grid-area: content3;
+    padding: var(--main-padding);
+}
+
+footer{ 
+    background: midnightblue;
+    grid-area: footer;
+    padding: var(--main-padding);
+}
+
+@media only screen and (max-width: 550px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 2fr 1fr 1fr 1fr 0.5fr;
+        grid-template-areas: 
+        "nav"
+        "main"
+        "content1"
+        "content2"
+        "content3"
+        "footer"
+    }
+
+    #sidebar {
+        display: none;
+    }
+}
